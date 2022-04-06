@@ -1,0 +1,36 @@
+<div style="padding: 13px;">
+    <h1>SpaceX Mission Details</h1>
+    <mat-card  class="bg-pink" *ngIf="mission" style="background-color:lightgreen;">
+        <div class="row">
+            <div class="col-2 text-center">
+                <img style="width: 15%;" [src]="mission.links.mission_patch" />
+            </div>
+            <div class="col-9">
+                <mat-card-header style="margin-left: 10px; margin-top: 15px;">
+                    <mat-card-title style="color: black;">Mission: {{mission.mission_name}}</mat-card-title>
+                    <mat-card-subtitle>Name : {{mission.mission_name}} </mat-card-subtitle>
+                    <mat-card-subtitle>launch Year : {{mission.launch_year}} </mat-card-subtitle>
+
+                    <mat-card-title style="color: black;">Rocket</mat-card-title>
+                    <mat-card-subtitle>Name : {{mission.rocket.rocket_name}} </mat-card-subtitle>
+                    <mat-card-subtitle>Type : {{mission.rocket.rocket_type}} </mat-card-subtitle>
+                    
+                    <mat-card-title style="color: black;">Launch Site</mat-card-title>
+                    <mat-card-subtitle>Name : {{mission.launch_site.site_name}} </mat-card-subtitle>
+                </mat-card-header>
+            </div>
+        </div>
+
+        <mat-card-content style="margin-left: 25px">
+            <mat-card-title style="color: black;">Launch Details</mat-card-title>
+            <p>
+                {{mission.details}}
+            </p>
+            <mat-card-title style="color: black;">More informations on Launch Details</mat-card-title>
+            <a class="icon" href="{{mission.links.article_link}}"><i class="fa fa-file-text-o" aria-hidden="true"></i></a>
+            <a class="icon" href="{{mission.links.wikipedia}}"> <i class="fa fa-firefox" aria-hidden="true"></i></a>
+            <a class="icon" href="{{mission.links.video_link}}"><i class="fa fa-video-camera" aria-hidden="true"></i></a>
+           
+        </mat-card-content>
+    </mat-card>
+</div>
